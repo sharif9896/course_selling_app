@@ -36,28 +36,37 @@ const Responsive = () => {
 
   return (
     <>
-    <div className="w-full max-w-5xl mx-auto p-4">
-      <Slider className="" {...settings}>
-        {course.map((card) => (
-          <div key={card._id} className="p-2">
-            <div className="relative flex-shrink-0 transition-transform duration-300 transform hover:scale-105">
-            <div className="bg-gray-900 cursor-pointer shadow-lg rounded-xl overflow-hidden">
-              <img
-                src={card.image.url}
-                alt={card.title}
-                className="hover:scale-110 h-32 w-full transition ease-in-out card-img-top  object-cover"
-              />
-              <div className="p-6 text-center">
-                <h2 className="text-lg font-semibold text-white">{card.title}</h2>
-                
-            <center><button className="mt-4 cursor-pointer bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-blue-500 duration-300">Enroll now</button></center>
+      <div className="w-full max-w-5xl mx-auto p-4">
+        <Slider className="" {...settings}>
+          {course.map((card) => (
+            <div key={card._id} className="p-2">
+              <div className="relative flex-shrink-0 transition-transform duration-300 transform hover:scale-105">
+                <div className="bg-gray-900 cursor-pointer shadow-lg rounded-xl overflow-hidden">
+                  <img
+                    src={card.image.url}
+                    alt={card.title}
+                    className="hover:scale-110 h-32 w-full transition ease-in-out card-img-top  object-cover"
+                  />
+                  <div className="p-6 text-center">
+                    <h2 className="text-lg font-semibold text-white">
+                      {card.title}
+                    </h2>
+
+                    <center>
+                      <Link
+                        to={"/courses"}
+                        className="mt-4 cursor-pointer bg-orange-500 text-white py-2 px-4 rounded-full hover:bg-blue-500 duration-300"
+                      >
+                        Enroll now
+                      </Link>
+                    </center>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          </div>
-        ))}
-      </Slider>
-    </div>
+          ))}
+        </Slider>
+      </div>
     </>
   );
 };
