@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Responsive = () => {
   const course = useSelector((store) => store.courses);
