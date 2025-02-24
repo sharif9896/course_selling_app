@@ -1,0 +1,16 @@
+@import "tailwindcss";
+.bg-orangered{
+  background-color:orangered;
+}
+a.active hr {
+  display: block;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+@media only screen and (max-width: 640px) {
+  a.active {
+    background-color: black;
+    color: orangered;
+  }
+}
