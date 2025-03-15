@@ -5,7 +5,7 @@ export const orderData = async (req, res) => {
   const order = req.body;
   try {
     const orderInfo = await Order.create(order);
-    console.log(orderInfo);
+    // console.log(orderInfo);
     const userId = orderInfo?.userId;
     const courseId = orderInfo?.courseId;
     res.status(201).json({ message: "Order Details: ", orderInfo });

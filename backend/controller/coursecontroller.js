@@ -5,7 +5,7 @@ import Purchasemodel from "../models/Purchase.js";
 const createcourse = async (req, res) => {
   const { adminId } = req;
   const { title, description, price } = req.body;
-  console.log(title, description, price)
+  // console.log(title, description, price)
   try {
     if (!title || !description || !price) {
       return res.status(400).json({ error: "All fields are required" });
@@ -80,7 +80,7 @@ const updatecourse = async (req, res) => {
     if(!course){
       return res.status(201).json({error:"Can't update created by other admin!"});
     }
-    console.log(image?.url);
+    // console.log(image?.url);
     return res.status(201).json({ message: "Updated Sucessfully!", course });
   } catch (e) {
     return res.status(500).json({ error: "Error in course Updating" });
@@ -134,7 +134,7 @@ const getsinglecourse = async (req, res) => {
 import Stripe from "stripe";
 import config from "../config.js";
 const stripe = new Stripe(config.STRIPE_SECCRET);
-console.log(config.STRIPE_SECCRET);
+// console.log(config.STRIPE_SECCRET);
 const buycourse = async (req, res) => {
   const { userId } = req;
   const { courseId } = req.params;

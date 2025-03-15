@@ -24,22 +24,21 @@ const Purchases = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const token = user?.token; // using optional chaining to avoid app crashing
 
-  console.log("purchases: ", purchases);
 
     // Token handling
     useEffect(() => {
- 
+
       if (token) {
         setIsLoggedIn(true);
       } else {
         setIsLoggedIn(false);
       }
     }, []);
-  
+
     if (!token) {
       navigate("/login");
     }
-  
+
 
   const handleLogout = async () => {
     try {
@@ -48,7 +47,7 @@ const Purchases = () => {
       localStorage.removeItem("user");
       setIsLoggedIn(false);
     } catch (error) {
-      console.log("Error in logging out ", error);
+      // console.log("Error in logging out ", error);
       toast.error(error.response.data.error);
     }
   };
@@ -56,7 +55,6 @@ const Purchases = () => {
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     const token = user.token;
-    console.log(token);
     const fetchCourses = async () => {
       if (!token) {
         setErrorMessage("Please login to purchase the courses");

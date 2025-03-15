@@ -19,7 +19,7 @@ function UpdateCourse() {
     const fetchCourseData = async () => {
       try {
         const { data } = await axios.get(`http://localhost:3051/api/v1//${id}`);
-        console.log(data);
+        // console.log(data);
         setTitle(data.course.title);
         setDescription(data.course.description);
         setPrice(data.course.price);
@@ -27,7 +27,7 @@ function UpdateCourse() {
         setImagePreview(data.course.image.url);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        // console.log(error);
         toast.error("Failed to fetch course data");
         setLoading(false);
       }
@@ -44,14 +44,14 @@ function UpdateCourse() {
       setImage(file);
     };
   };
-  console.log(image);
+  // console.log(image);
   const handleUpdateCourse = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
     formData.append("price", price);
-    console.log(image);
+    // console.log(image);
     if (image) {
       formData.append("imageUrl", image);
     }

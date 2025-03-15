@@ -31,7 +31,6 @@ function Signup() {
           },
         }
       );
-      console.log("Sugnup successful: ", response.data);
       toast.success(response.data.message);
       navigate("/login");
     } catch (error) {

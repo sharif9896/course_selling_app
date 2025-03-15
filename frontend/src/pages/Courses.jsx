@@ -38,7 +38,7 @@ const Courses = () => {
       localStorage.removeItem("user");
       setIsLoggedIn(false);
     } catch (error) {
-      console.log("Error in logging out ", error);
+      // console.log("Error in logging out ", error);
       toast.error(error.response.data.error);
     }
   };
@@ -46,7 +46,7 @@ const Courses = () => {
     const fetchCourses = async () => {
       try {
         const response = await axios.get(`${BACKEND_URL}api/v1//list`);
-        console.log(response.data.course);
+        // console.log(response.data.course);
         setCourses(response.data.course);
         setLoading(false);
       } catch (error) {

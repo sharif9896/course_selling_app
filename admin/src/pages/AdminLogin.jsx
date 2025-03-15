@@ -12,7 +12,7 @@ function AdminLogin() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ password });
+    // console.log({ password });
     try {
       const response = await axios.post(
         `http://localhost:3051/api/admin/login`,

@@ -6,7 +6,7 @@ const CourseSlider = () => {
   const course = useSelector((store) => store.courses);
 //   const [curr,setcurr] = useState([]);
   course.map((item)=>{
-    console.log(item.image.url)
+    // console.log(item.image.url)
   })
   var settings = {
     dots: true,
